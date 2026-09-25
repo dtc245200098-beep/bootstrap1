@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Grid System Practice</title>
+    <!-- Nhúng Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <!-- 1. Header -->
+    <header class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <h1 class="mb-0">Website Bố Cục Responsive</h1>
+            <p class="lead mb-0">Thực hành Bootstrap Grid System & Navbar</p>
+        </div>
+    </header>
+
+    <!-- 2. Navbar với Dropdown -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">MyBrand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#main-content">Giới thiệu</a>
+                    </li>
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dịch vụ
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Thiết kế Web</a></li>
+                            <li><a class="dropdown-item" href="#">SEO & Marketing</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Tư vấn giải pháp</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sidebar">Tin tức</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. Grid System: Main Content + Sidebar -->
+    <main class="container my-4">
+        <div class="row g-4">
+            
+            <!-- Main Content (Desktop: 8/12 cột, Mobile: 12/12 cột) -->
+            <section id="main-content" class="col-12 col-lg-8">
+                <div class="card shadow-sm p-4 h-100">
+                    <h2>Nội Dung Chính</h2>
+                    <p class="text-muted">Được phân bổ chiếm 8 cột (`col-lg-8`) trên màn hình lớn và 12 cột (`col-12`) trên màn hình di động.</p>
+                    <hr>
+                    <h4>Bài viết nổi bật</h4>
+                    <p>Bootstrap Grid System hoạt động dựa trên hệ thống 12 cột linh hoạt. Bằng cách kết hợp các class breakpoint như `col-12` và `col-lg-8`, giao diện tự động điều chỉnh sao cho tối ưu nhất với từng loại thiết bị.</p>
+                    <p>Trên màn hình Desktop (≥992px), phần nội dung chính này sẽ nằm song song bên trái Sidebar. Khi co màn hình xuống kích thước Mobile (<992px), phần Sidebar phía dưới sẽ tự động di chuyển xuống bên dưới phần nội dung này.</p>
+                </div>
+            </section>
+
+            <!-- Sidebar (Desktop: 4/12 cột, Mobile: 12/12 cột) -->
+            <aside id="sidebar" class="col-12 col-lg-4">
+                <div class="card shadow-sm p-4 h-100 bg-white">
+                    <h3>Sidebar</h3>
+                    <p class="text-muted">Chiếm 4 cột (`col-lg-4`) trên Desktop.</p>
+                    <hr>
+                    <h5>Thông tin phụ</h5>
+                    <ul class="list-group list-group-flush mb-3">
+                        <li class="list-group-item px-0">📢 Thông báo mới nhất</li>
+                        <li class="list-group-item px-0">🔥 Khuyến mãi trong tháng</li>
+                        <li class="list-group-item px-0">📞 Hỗ trợ kỹ thuật 24/7</li>
+                    </ul>
+                    <div class="alert alert-info mb-0">
+                        Nội dung quảng cáo hoặc tin tức liên quan hiển thị ở đây.
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- 4. Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 MyBrand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Nhúng Bootstrap JS Bundle CDN (cần thiết cho Dropdown và Toggler) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
